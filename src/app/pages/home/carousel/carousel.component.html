@@ -1,0 +1,16 @@
+<div class="mt-3">
+  <ngx-slick-carousel
+    class="carousel"
+    #slickModal="slick-carousel"
+    [config]="slideConfig"
+  >
+    <div ngxSlickItem *ngFor="let item of DSPhim" class="slide">
+      <img
+        src="{{ item.hinhAnh }}"
+        alt=""
+        class="rounded-2xl w-full h-[500px]"
+      />
+      <div class="bg-no-repeat"></div>
+    </div>
+  </ngx-slick-carousel>
+</div>

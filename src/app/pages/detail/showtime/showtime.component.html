@@ -1,0 +1,9 @@
+<div class="text-xl text-center">Thong tin cum rap</div>
+<mat-tab-group>
+  <div *ngFor="let rap of HeThongRap">
+    <mat-tab label="{{ rap.tenHeThongRap }}">
+      <img src="{{ rap.logo }}" alt="" class="w-[40px] h-[40px]" />
+      <app-detalrap [maHeThongRap]="rap.maHeThongRap"></app-detalrap>
+    </mat-tab>
+  </div>
+</mat-tab-group>

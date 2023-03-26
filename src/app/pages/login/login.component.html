@@ -1,0 +1,39 @@
+<div class="flex justify-center items-center p-5">
+  <div>
+    <h1 class="text-3xl text-center font-bold my-4">dang nhap</h1>
+    <form
+      action=""
+      class="flex flex-col"
+      [formGroup]="signForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <mat-form-field class="example-form-field w-[500px] mb-3">
+        <mat-label>tai khoan</mat-label>
+        <input matInput type="text" formControlName="taiKhoan" />
+        <mat-error *ngIf="signForm.controls.taiKhoan.errors?.['required']"
+          >tai khoang la bat buon</mat-error
+        >
+        <mat-error *ngIf="signForm.controls.taiKhoan.errors?.['minlength']"
+          >co it nhat 4 ky tu</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field class="example-form-field w-[500px] mb-3">
+        <mat-label>mat khau</mat-label>
+        <input type="password" matInput formControlName="matKhau" />
+        <mat-error *ngIf="signForm.controls.matKhau.errors?.['required']"
+          >tai khoang la bat buon</mat-error
+        >
+        <mat-error *ngIf="signForm.controls.matKhau.errors?.['minlength']"
+          >co it nhat 4 ky tu</mat-error
+        >
+      </mat-form-field>
+      <div class="flex items-center">
+        <button mat-raised-button color="primary" [disabled]="!signForm.valid">
+          dang nhap
+        </button>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+      </div>
+    </form>
+  </div>
+</div>

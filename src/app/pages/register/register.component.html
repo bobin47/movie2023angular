@@ -1,0 +1,99 @@
+<div class="flex justify-center items-center p-5">
+  <div>
+    <h1 class="text-3xl text-center font-bold my-4">dang ky</h1>
+    <form
+      action=""
+      class="flex flex-col"
+      [formGroup]="registerForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <mat-form-field class="example-form-field w-[500px] mb-3">
+        <mat-label>tai khoan</mat-label>
+        <input matInput type="text" formControlName="taiKhoan" />
+        <mat-error *ngIf="registerForm.controls.taiKhoan.errors?.['required']"
+          >tai khoang la bat buon</mat-error
+        >
+        <mat-error *ngIf="registerForm.controls.taiKhoan.errors?.['minlength']"
+          >tren 6 ky tu</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field class="example-form-field w-[500px] mb-3">
+        <mat-label>mat khau</mat-label>
+        <input type="password" matInput formControlName="matKhau" />
+        <mat-error *ngIf="registerForm.controls.taiKhoan.errors?.['required']"
+          >tai khoang la bat buon</mat-error
+        >
+        <mat-error *ngIf="registerForm.controls.taiKhoan.errors?.['minlength']"
+          >tren 6 ky tu</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field class="example-form-field w-[500px] mb-3">
+        <mat-label>email</mat-label>
+        <input matInput type="text" formControlName="email" />
+        <mat-error *ngIf="registerForm.controls.email.errors?.['pattern']"
+          >khong dung dinh dang email</mat-error
+        >
+        <mat-error *ngIf="registerForm.controls.email.errors?.['required']"
+          >khong dung dinh dang email</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field class="example-form-field w-[500px] mb-3">
+        <mat-label>sdt</mat-label>
+        <input type="text" matInput formControlName="sdt" />
+        <mat-error *ngIf="registerForm.controls.sdt.errors?.['required']"
+          >sdt la bac buoc</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field class="example-form-field w-[500px] mb-3">
+        <mat-label>maNhom</mat-label>
+        <mat-select formControlName="maNhom">
+          <mat-option value="GP01">GP01</mat-option>
+          <mat-option value="GP01">GP02</mat-option>
+        </mat-select>
+        <mat-error *ngIf="registerForm.controls.maNhom.errors?.['required']"
+          >maNhom la bat buoc</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field class="example-form-field w-[500px] mb-3">
+        <mat-label>maLoaiNguoiDung</mat-label>
+        <mat-select formControlName="maLoaiNguoiDung">
+          <mat-option value="KhachHang">Khanh hang</mat-option>
+          <mat-option value="QuanTri">Quan tri</mat-option>
+        </mat-select>
+        <mat-error
+          *ngIf="registerForm.controls.maLoaiNguoiDung.errors?.['required']"
+          >maLoaiNguoiDung la bat buoc</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field class="example-form-field w-[500px] mb-3">
+        <mat-label>hoTen</mat-label>
+        <input matInput type="text" formControlName="hoTen" />
+        <mat-error *ngIf="registerForm.controls.hoTen.errors?.['required']"
+          >ho Ten la bat buoc</mat-error
+        >
+      </mat-form-field>
+
+      <div class="flex items-center">
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="!registerForm.valid"
+          class="flex items-center justify-center"
+        >
+          dang nhap
+        </button>
+        <mat-spinner
+          *ngIf="isLoading"
+          class="ml-2"
+          style="width: 15px; height: 15px"
+        ></mat-spinner>
+      </div>
+    </form>
+  </div>
+</div>

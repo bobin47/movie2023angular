@@ -1,0 +1,54 @@
+<mat-toolbar color="primary">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <button><span routerLink="/home">My App</span></button>
+
+  <span class="example-spacer"></span>
+  <ng-container *ngIf="isLogin; then icon; else login"> </ng-container>
+  <ng-template #login>
+    <button mat-raised-button routerLink="/register" class="mr-3">
+      Dang ky
+    </button>
+    <button mat-raised-button color="accent" routerLink="/login">
+      Dang nhap
+    </button>
+  </ng-template>
+
+  <ng-template class="flex flex-row" #icon>
+    <div *ngIf="isAdmin; else admin"></div>
+    <ng-template #admin>
+      <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+        routerLink="admin/dodash"
+      >
+        <mat-icon
+          ><span class="material-symbols-outlined">
+            admin_panel_settings
+          </span></mat-icon
+        >
+      </button>
+    </ng-template>
+
+    <div>
+      <button
+        mat-icon-button
+        class="example-icon bg-black"
+        aria-label="Example icon-button with share icon"
+        [matMenuTriggerFor]="menu"
+      >
+        <mat-icon>person</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item (click)="dangXuat()">Dang xuat</button>
+      </mat-menu>
+    </div>
+  </ng-template>
+</mat-toolbar>

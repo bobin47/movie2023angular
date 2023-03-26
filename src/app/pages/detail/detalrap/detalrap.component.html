@@ -1,0 +1,13 @@
+<div>
+  <mat-accordion *ngFor="let rap of raps">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ rap.tenCumRap }} </mat-panel-title>
+        <mat-panel-description>
+          {{ rap.diaChi }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div *ngIf="rap.maCumRap === CumRapChieu">f</div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

@@ -1,0 +1,44 @@
+<div class="text-center text-3xl font-bold py-5">Danh Sach Phong ve</div>
+
+<div class="grid grid-cols-12 p-5">
+  <div *ngIf="isloading">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div class="grid grid-cols-12 gap-2 col-span-8">
+    <div *ngFor="let ghe of danhSachGhe" class="col-span-1">
+      <app-ghe [ghe]="ghe" (emit)="datgheOutput($event, ghe)"></app-ghe>
+    </div>
+  </div>
+  <div class="col-span-4">
+    <div class="p-4">
+      <div
+        class="flex justify-around items-center border border-black py-5 rounded-xl"
+      >
+        <div class="text-lg">so ghe da dat: {{ soGheConLai }}</div>
+        <div class="text-lg">so ghe da dat: {{ soGheDaDat }}</div>
+      </div>
+
+      <ng-container
+        *ngIf="danhSachGheDangDat.length > 0 === true; then hihi; else dsa"
+      >
+      </ng-container>
+      <ng-template #hihi>
+        <div class="border border-black py-5 px-2 rounded-xl mt-4">
+          Danhsachghe
+          <div *ngFor="let ghe of danhSachGheDangDat" class="flex">
+            <div>Ten ghe: {{ ghe.tenGhe }}</div>
+            <div class="ml-3">Loai ghe: {{ ghe.loaiGhe }}</div>
+            <div class="ml-3">gia tien: {{ ghe.giaVe }}</div>
+          </div>
+        </div>
+        <button mat-raised-button color="warn" class="mt-2" (click)="datve()">
+          dat ve
+        </button>
+      </ng-template>
+      <ng-template #dsa>
+        <div class="mt-4">hien tai ban chua dat ghe nao</div>
+      </ng-template>
+    </div>
+    <div></div>
+  </div>
+</div>

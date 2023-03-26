@@ -1,0 +1,99 @@
+<div class="px-4 py-2 h-[50%]">
+  <h1 class="text-3xl text-center font-bold my-4">Sua Nguoi dung</h1>
+  <form
+    action=""
+    class="flex flex-col"
+    [formGroup]="themUserForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <mat-form-field class="example-form-field w-[500px]">
+      <mat-label>tai khoan</mat-label>
+      <input matInput type="text" formControlName="taiKhoan" />
+      <mat-error *ngIf="themUserForm.controls.taiKhoan.errors?.['required']"
+        >tai khoang la bat buon</mat-error
+      >
+      <mat-error *ngIf="themUserForm.controls.taiKhoan.errors?.['minlength']"
+        >tren 6 ky tu</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field class="example-form-field w-[500px]">
+      <mat-label>mat khau</mat-label>
+      <input type="password" matInput formControlName="matKhau" />
+      <mat-error *ngIf="themUserForm.controls.taiKhoan.errors?.['required']"
+        >tai khoang la bat buon</mat-error
+      >
+      <mat-error *ngIf="themUserForm.controls.taiKhoan.errors?.['minlength']"
+        >tren 6 ky tu</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field class="example-form-field w-[500px]">
+      <mat-label>email</mat-label>
+      <input matInput type="text" formControlName="email" />
+      <mat-error *ngIf="themUserForm.controls.email.errors?.['pattern']"
+        >khong dung dinh dang email</mat-error
+      >
+      <mat-error *ngIf="themUserForm.controls.email.errors?.['required']"
+        >khong dung dinh dang email</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field class="example-form-field w-[500px]">
+      <mat-label>soDt</mat-label>
+      <input type="text" matInput formControlName="soDt" />
+      <mat-error *ngIf="themUserForm.controls.soDt.errors?.['required']"
+        >sdt la bac buoc</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field class="example-form-field w-[500px]">
+      <mat-label>maNhom</mat-label>
+      <mat-select formControlName="maNhom">
+        <mat-option value="GP01">GP01</mat-option>
+        <mat-option value="GP01">GP02</mat-option>
+      </mat-select>
+      <mat-error *ngIf="themUserForm.controls.maNhom.errors?.['required']"
+        >maNhom la bat buoc</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field class="example-form-field w-[500px]">
+      <mat-label>maLoaiNguoiDung</mat-label>
+      <mat-select formControlName="maLoaiNguoiDung">
+        <mat-option value="KhachHang">Khanh hang</mat-option>
+        <mat-option value="QuanTri">Quan tri</mat-option>
+      </mat-select>
+      <mat-error
+        *ngIf="themUserForm.controls.maLoaiNguoiDung.errors?.['required']"
+        >maLoaiNguoiDung la bat buoc</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field class="example-form-field w-[500px]">
+      <mat-label>hoTen</mat-label>
+      <input matInput type="text" formControlName="hoTen" />
+      <mat-error *ngIf="themUserForm.controls.hoTen.errors?.['required']"
+        >ho Ten la bat buoc</mat-error
+      >
+    </mat-form-field>
+
+    <div class="flex items-center">
+      <button
+        mat-raised-button
+        color="primary"
+        class="flex items-center justify-center"
+        [disabled]="!themUserForm.valid"
+      >
+        Sua
+      </button>
+      <!-- <mat-spinner
+          *ngIf="isLoading"
+          class="ml-2"
+          style="width: 15px; height: 15px"
+
+
+        ></mat-spinner> -->
+    </div>
+  </form>
+</div>
