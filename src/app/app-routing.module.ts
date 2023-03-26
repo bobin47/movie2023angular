@@ -12,7 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AdminGuard } from '../app/core/guards/admin.guard';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'detail/:id', component: DetailComponent },
