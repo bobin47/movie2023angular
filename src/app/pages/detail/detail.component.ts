@@ -1,7 +1,6 @@
 import { MovieService } from './../../core/service/movie/movie.service';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { resolveConfig } from 'prettier';
 
 @Component({
   selector: 'app-detail',
