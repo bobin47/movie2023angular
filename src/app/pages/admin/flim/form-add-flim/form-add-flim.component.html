@@ -1,0 +1,62 @@
+<div class="p-5">
+  <div class="p-5 font-bold">Them Phim</div>
+  <form [formGroup]="themFlimForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width w-full">
+      <mat-label>Ma phim</mat-label>
+      <input matInput placeholder="Ex. Pizza" formControlName="maPhim" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width w-full">
+      <mat-label>ten Phim</mat-label>
+      <input matInput placeholder="Ex. Pizza" formControlName="tenPhim" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width w-full">
+      <mat-label>bi Danh</mat-label>
+      <input matInput placeholder="Ex. Pizza" formControlName="biDanh" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width w-full">
+      <mat-label>mo Ta</mat-label>
+      <input matInput placeholder="Ex. Pizza" formControlName="moTa" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width w-full">
+      <mat-label>maNhom</mat-label>
+      <input matInput placeholder="Ex. Pizza" formControlName="maNhom" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width w-full">
+      <mat-label>danh gia</mat-label>
+      <input matInput placeholder="Ex. Pizza" formControlName="danhGia" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width w-full">
+      <mat-label>trailer</mat-label>
+      <input matInput placeholder="Ex. Pizza" formControlName="trailer" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Choose a date</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        class="w-full"
+        formControlName="ngayKhoiChieu"
+      />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <div>
+      <div>hinhAnh</div>
+      <input type="file" formControlName="hinhAnh" />
+    </div>
+
+    <button mat-raised-button color="accent">Them</button>
+  </form>
+</div>

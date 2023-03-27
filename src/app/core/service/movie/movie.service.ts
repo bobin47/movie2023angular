@@ -17,7 +17,7 @@ export class MovieService {
 
   public ThemPhim(value: any): Observable<any> {
     return this.http.post<any>(
-      'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP03',
+      'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/ThemPhim',
       value
     );
   }

@@ -1,13 +1,13 @@
 export interface Movie {
-  biDanh: string;
-  danhGia: number;
-  hinhAnh: string;
-  maNhom: string;
-  maPhim: number;
-  moTa: string;
-  ngayKhoiChieu: string;
-  tenPhim: string;
-  trailer: string;
+  biDanh: string | undefined;
+  danhGia: number | undefined;
+  hinhAnh: string | undefined;
+  maNhom: string | undefined;
+  maPhim: string | undefined;
+  moTa: string | undefined;
+  ngayKhoiChieu: string | undefined;
+  tenPhim: string | undefined;
+  trailer: string | undefined;
 }
 
 export interface Ve {

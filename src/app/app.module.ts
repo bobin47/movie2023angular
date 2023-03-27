@@ -46,6 +46,10 @@ import { AdduserComponent } from './pages/admin/user/adduser/adduser.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PopupComponent } from './pages/admin/user/popup/popup.component';
 import { PopupEditUserComponent } from './pages/admin/user/popup-edit-user/popup-edit-user.component';
+import { AddFlimComponent } from './pages/admin/flim/add-flim/add-flim.component';
+import { FormAddFlimComponent } from './pages/admin/flim/form-add-flim/form-add-flim.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 const materialMoule = [
   MatTableModule,
   MatSlideToggleModule,
@@ -63,6 +67,8 @@ const materialMoule = [
   MatExpansionModule,
   MatPaginatorModule,
   MatDialogModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
 ];
 
 @NgModule({
@@ -90,6 +96,8 @@ const materialMoule = [
     AdduserComponent,
     PopupComponent,
     PopupEditUserComponent,
+    AddFlimComponent,
+    FormAddFlimComponent,
   ],
   imports: [
     BrowserModule,

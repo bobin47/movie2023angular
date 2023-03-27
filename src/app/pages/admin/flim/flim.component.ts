@@ -1,7 +1,9 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { MovieService } from './../../../core/service/movie/movie.service';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { ToastrService } from 'ngx-toastr';
 
 export interface PeriodicElement {
   name: string;
@@ -50,7 +52,10 @@ export class FlimComponent {
   dataSource = new MatTableDataSource<any>(this.DanhSachPhim);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private movieService: MovieService) {}
+  constructor(
+    private movieService: MovieService,
+    private noti: ToastrService
+  ) {}
 
   ngOnInit() {
     this.movieService.DanhSachPhim().subscribe(
@@ -69,5 +74,21 @@ export class FlimComponent {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  xoaPhim(value: string) {
+    console.log(value);
+    this.movieService.XoaPhim(value).subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (err: HttpErrorResponse) => {
+        if (err.status === 200) {
+          this.noti.success('xoa thanh cong');
+        } else {
+          this.noti.error('xoa khong thanh cong');
+        }
+      }
+    );
   }
 }

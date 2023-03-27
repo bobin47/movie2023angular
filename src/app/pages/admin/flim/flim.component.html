@@ -1,13 +1,10 @@
+<mat-form-field class="w-[100%]">
+  <mat-label>Search</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input />
+</mat-form-field>
+
+<app-add-flim></app-add-flim>
 <div class="mat-elevation-z8">
-  <mat-form-field class="w-[100%]">
-    <mat-label>Search</mat-label>
-    <input
-      matInput
-      (keyup)="applyFilter($event)"
-      placeholder="Ex. ium"
-      #input
-    />
-  </mat-form-field>
   <table mat-table [dataSource]="dataSource">
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
@@ -45,7 +42,7 @@
               <span class="material-symbols-outlined"> edit </span>
             </mat-icon>
           </button>
-          <button>
+          <button (click)="xoaPhim(element.maPhim)">
             <mat-icon>
               <span class="material-symbols-outlined"> delete </span>
             </mat-icon>
