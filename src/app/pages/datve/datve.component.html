@@ -1,4 +1,4 @@
-<div class="text-center text-3xl font-bold py-5">Danh Sach Phong ve</div>
+<div class="text-center text-3xl font-bold py-5">Danh Sách Phòng Vé</div>
 
 <div class="grid grid-cols-12 p-5">
   <div *ngIf="isloading">
@@ -14,8 +14,8 @@
       <div
         class="flex justify-around items-center border border-black py-5 rounded-xl"
       >
-        <div class="text-lg">so ghe da dat: {{ soGheConLai }}</div>
-        <div class="text-lg">so ghe da dat: {{ soGheDaDat }}</div>
+        <div class="text-lg">Số ghế chưa đăt: {{ soGheConLai }}</div>
+        <div class="text-lg">Số ghế đã đặt: {{ soGheDaDat }}</div>
       </div>
 
       <ng-container
@@ -23,20 +23,23 @@
       >
       </ng-container>
       <ng-template #hihi>
-        <div class="border border-black py-5 px-2 rounded-xl mt-4">
-          Danhsachghe
-          <div *ngFor="let ghe of danhSachGheDangDat" class="flex">
-            <div>Ten ghe: {{ ghe.tenGhe }}</div>
-            <div class="ml-3">Loai ghe: {{ ghe.loaiGhe }}</div>
-            <div class="ml-3">gia tien: {{ ghe.giaVe }}</div>
+        <div class="border border-black py-2 px-5 rounded-xl mt-4">
+          <div class="text-center">Danh Sách ghế đang đặt</div>
+          <div
+            *ngFor="let ghe of danhSachGheDangDat"
+            class="flex justify-between"
+          >
+            <div>Tên ghế: {{ ghe.tenGhe }}</div>
+            <div class="ml-3">Loại ghế: {{ ghe.loaiGhe }}</div>
+            <div class="ml-3">Giá tiền: {{ ghe.giaVe }}</div>
           </div>
         </div>
         <button mat-raised-button color="warn" class="mt-2" (click)="datve()">
-          dat ve
+          Đặt Vé
         </button>
       </ng-template>
       <ng-template #dsa>
-        <div class="mt-4">hien tai ban chua dat ghe nao</div>
+        <div class="mt-4">Hiện tại bạn chưa đặt ghế nào</div>
       </ng-template>
     </div>
     <div></div>

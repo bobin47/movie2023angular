@@ -1,43 +1,43 @@
 <div class="p-5">
-  <div class="p-5 font-bold">Them Phim</div>
+  <div class="p-5 font-bold">Thêm Phim</div>
   <form [formGroup]="themFlimForm" (ngSubmit)="onSubmit()">
     <mat-form-field class="example-full-width w-full">
-      <mat-label>Ma phim</mat-label>
+      <mat-label>Mã Phim</mat-label>
       <input matInput placeholder="Ex. Pizza" formControlName="maPhim" />
     </mat-form-field>
 
     <mat-form-field class="example-full-width w-full">
-      <mat-label>ten Phim</mat-label>
+      <mat-label>Tên Phim</mat-label>
       <input matInput placeholder="Ex. Pizza" formControlName="tenPhim" />
     </mat-form-field>
 
     <mat-form-field class="example-full-width w-full">
-      <mat-label>bi Danh</mat-label>
+      <mat-label>Bí Danh</mat-label>
       <input matInput placeholder="Ex. Pizza" formControlName="biDanh" />
     </mat-form-field>
 
     <mat-form-field class="example-full-width w-full">
-      <mat-label>mo Ta</mat-label>
+      <mat-label>Mô tả</mat-label>
       <input matInput placeholder="Ex. Pizza" formControlName="moTa" />
     </mat-form-field>
 
     <mat-form-field class="example-full-width w-full">
-      <mat-label>maNhom</mat-label>
+      <mat-label> Mã nhóm</mat-label>
       <input matInput placeholder="Ex. Pizza" formControlName="maNhom" />
     </mat-form-field>
 
     <mat-form-field class="example-full-width w-full">
-      <mat-label>danh gia</mat-label>
+      <mat-label>đánh Gía</mat-label>
       <input matInput placeholder="Ex. Pizza" formControlName="danhGia" />
     </mat-form-field>
 
     <mat-form-field class="example-full-width w-full">
-      <mat-label>trailer</mat-label>
+      <mat-label>Trailer</mat-label>
       <input matInput placeholder="Ex. Pizza" formControlName="trailer" />
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Choose a date</mat-label>
+      <mat-label>Ngày Khởi chiếu</mat-label>
       <input
         matInput
         [matDatepicker]="picker"
@@ -53,10 +53,10 @@
     </mat-form-field>
 
     <div>
-      <div>hinhAnh</div>
+      <div>Hình Ảnh</div>
       <input type="file" formControlName="hinhAnh" />
     </div>
 
-    <button mat-raised-button color="accent">Them</button>
+    <button mat-raised-button color="accent">Thêm</button>
   </form>
 </div>

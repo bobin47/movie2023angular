@@ -32,7 +32,7 @@ export class RegisterComponent {
       Validators.required,
       Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$'),
     ]),
-    sdt: new FormControl('', [Validators.required]),
+    soDt: new FormControl('', [Validators.required]),
     maNhom: new FormControl('', [Validators.required]),
     maLoaiNguoiDung: new FormControl('', [Validators.required]),
   });

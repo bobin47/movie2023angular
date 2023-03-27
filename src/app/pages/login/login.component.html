@@ -1,6 +1,6 @@
 <div class="flex justify-center items-center p-5">
   <div>
-    <h1 class="text-3xl text-center font-bold my-4">dang nhap</h1>
+    <h1 class="text-3xl text-center font-bold my-4">Đăng Nhập</h1>
     <form
       action=""
       class="flex flex-col"
@@ -8,29 +8,29 @@
       (ngSubmit)="onSubmit()"
     >
       <mat-form-field class="example-form-field w-[500px] mb-3">
-        <mat-label>tai khoan</mat-label>
+        <mat-label>Tài Khoản</mat-label>
         <input matInput type="text" formControlName="taiKhoan" />
         <mat-error *ngIf="signForm.controls.taiKhoan.errors?.['required']"
-          >tai khoang la bat buon</mat-error
+          >Tài Khoản là bắt buộc</mat-error
         >
         <mat-error *ngIf="signForm.controls.taiKhoan.errors?.['minlength']"
-          >co it nhat 4 ky tu</mat-error
+          >Ít nhất 4 ký tự</mat-error
         >
       </mat-form-field>
 
       <mat-form-field class="example-form-field w-[500px] mb-3">
-        <mat-label>mat khau</mat-label>
+        <mat-label>Mật khẩu</mat-label>
         <input type="password" matInput formControlName="matKhau" />
         <mat-error *ngIf="signForm.controls.matKhau.errors?.['required']"
-          >tai khoang la bat buon</mat-error
+          >Mật khẩu là bắt buộc</mat-error
         >
         <mat-error *ngIf="signForm.controls.matKhau.errors?.['minlength']"
-          >co it nhat 4 ky tu</mat-error
+          >Ít nhất 4 ký tự</mat-error
         >
       </mat-form-field>
       <div class="flex items-center">
         <button mat-raised-button color="primary" [disabled]="!signForm.valid">
-          dang nhap
+          Đăng Nhập
         </button>
         <mat-spinner *ngIf="isLoading"></mat-spinner>
       </div>

@@ -27,6 +27,6 @@ export class HeaderComponent {
 
   dangXuat() {
     localStorage.removeItem('user');
-    location.assign('/home');
+    location.assign('/');
   }
 }

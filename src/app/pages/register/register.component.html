@@ -1,6 +1,6 @@
 <div class="flex justify-center items-center p-5">
   <div>
-    <h1 class="text-3xl text-center font-bold my-4">dang ky</h1>
+    <h1 class="text-3xl text-center font-bold my-4">Đăng Ký</h1>
     <form
       action=""
       class="flex flex-col"
@@ -8,74 +8,74 @@
       (ngSubmit)="onSubmit()"
     >
       <mat-form-field class="example-form-field w-[500px] mb-3">
-        <mat-label>tai khoan</mat-label>
+        <mat-label>Tài Khoản</mat-label>
         <input matInput type="text" formControlName="taiKhoan" />
         <mat-error *ngIf="registerForm.controls.taiKhoan.errors?.['required']"
-          >tai khoang la bat buon</mat-error
+          >Tài Khoản là bắt buộc</mat-error
         >
         <mat-error *ngIf="registerForm.controls.taiKhoan.errors?.['minlength']"
-          >tren 6 ky tu</mat-error
+          >Ít nhất trên 6 ký tự</mat-error
         >
       </mat-form-field>
 
       <mat-form-field class="example-form-field w-[500px] mb-3">
-        <mat-label>mat khau</mat-label>
+        <mat-label>Mật Khẩu</mat-label>
         <input type="password" matInput formControlName="matKhau" />
         <mat-error *ngIf="registerForm.controls.taiKhoan.errors?.['required']"
-          >tai khoang la bat buon</mat-error
+          >Mật Khẩu là bắc Buộc</mat-error
         >
         <mat-error *ngIf="registerForm.controls.taiKhoan.errors?.['minlength']"
-          >tren 6 ky tu</mat-error
+          >Ít nhất trên 6 ký tự</mat-error
         >
       </mat-form-field>
 
       <mat-form-field class="example-form-field w-[500px] mb-3">
-        <mat-label>email</mat-label>
+        <mat-label>Email</mat-label>
         <input matInput type="text" formControlName="email" />
         <mat-error *ngIf="registerForm.controls.email.errors?.['pattern']"
-          >khong dung dinh dang email</mat-error
+          >Email không đúng định dạng</mat-error
         >
         <mat-error *ngIf="registerForm.controls.email.errors?.['required']"
-          >khong dung dinh dang email</mat-error
+          >Email là bắt buộc</mat-error
         >
       </mat-form-field>
 
       <mat-form-field class="example-form-field w-[500px] mb-3">
-        <mat-label>sdt</mat-label>
+        <mat-label>Số điẹn thoại </mat-label>
         <input type="text" matInput formControlName="sdt" />
-        <mat-error *ngIf="registerForm.controls.sdt.errors?.['required']"
-          >sdt la bac buoc</mat-error
+        <mat-error *ngIf="registerForm.controls.soDt.errors?.['required']"
+          >Số điẹn thoại là bắt buộc</mat-error
         >
       </mat-form-field>
 
       <mat-form-field class="example-form-field w-[500px] mb-3">
-        <mat-label>maNhom</mat-label>
+        <mat-label> Mã Nhóm</mat-label>
         <mat-select formControlName="maNhom">
           <mat-option value="GP01">GP01</mat-option>
           <mat-option value="GP01">GP02</mat-option>
         </mat-select>
         <mat-error *ngIf="registerForm.controls.maNhom.errors?.['required']"
-          >maNhom la bat buoc</mat-error
+          >Mã Nhóm là bắt buộc</mat-error
         >
       </mat-form-field>
 
       <mat-form-field class="example-form-field w-[500px] mb-3">
-        <mat-label>maLoaiNguoiDung</mat-label>
+        <mat-label>Mã loại người dùng</mat-label>
         <mat-select formControlName="maLoaiNguoiDung">
-          <mat-option value="KhachHang">Khanh hang</mat-option>
-          <mat-option value="QuanTri">Quan tri</mat-option>
+          <mat-option value="KhachHang">Khách Hàng</mat-option>
+          <mat-option value="QuanTri">Quản trị</mat-option>
         </mat-select>
         <mat-error
           *ngIf="registerForm.controls.maLoaiNguoiDung.errors?.['required']"
-          >maLoaiNguoiDung la bat buoc</mat-error
+          >Mã loại người dùng là bắt buộc</mat-error
         >
       </mat-form-field>
 
       <mat-form-field class="example-form-field w-[500px] mb-3">
-        <mat-label>hoTen</mat-label>
+        <mat-label>Họ Tên</mat-label>
         <input matInput type="text" formControlName="hoTen" />
         <mat-error *ngIf="registerForm.controls.hoTen.errors?.['required']"
-          >ho Ten la bat buoc</mat-error
+          >Họ Tên là bắt buộc</mat-error
         >
       </mat-form-field>
 
@@ -86,7 +86,7 @@
           [disabled]="!registerForm.valid"
           class="flex items-center justify-center"
         >
-          dang nhap
+          Đăng nhập
         </button>
         <mat-spinner
           *ngIf="isLoading"

@@ -43,7 +43,7 @@ export class LoginComponent {
         this.isLoading = false;
         this.toastr.success('dang nhap thanh cong hihi');
         setTimeout(() => {
-          location.assign('/home');
+          location.assign('/');
         }, 2000);
       },
 

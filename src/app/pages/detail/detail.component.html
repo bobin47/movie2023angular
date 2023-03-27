@@ -4,21 +4,21 @@
   </div>
   <div class="col-span-8">
     <mat-tab-group>
-      <mat-tab label="Thong tin phim">
+      <mat-tab label="Thông tin phim">
         <div class="p-5">
-          <div class="text-gray-400">Ten Phim</div>
+          <div class="text-gray-400">Tên Phim</div>
           <div class="text-xl mb-4">{{ ThongtinPhim.tenPhim }}</div>
-          <div class="text-gray-400">Mo Ta</div>
+          <div class="text-gray-400">Mô Ta</div>
           <div class="text-xl mb-4">{{ ThongtinPhim.moTa }}</div>
-          <div class="text-gray-400">danh gia</div>
+          <div class="text-gray-400">Đánh giá</div>
           <div class="text-xl mb-4">{{ ThongtinPhim.danhGia }}</div>
-          <div class="text-gray-400">Ngay khoi chieu</div>
+          <div class="text-gray-400">Ngày Khởi Chiếu</div>
           <div class="text-xl mb-4">
             {{ ThongtinPhim.ngayKhoiChieu | date }}
           </div>
         </div>
       </mat-tab>
-      <mat-tab label="trailer">
+      <mat-tab label="Trailer">
         <iframe
           width="100%"
           height="500"
@@ -28,17 +28,17 @@
         ></iframe
       ></mat-tab>
 
-      <mat-tab label="Thong tin lich chieu">
-        <div *ngFor="let item of ThongtinPhim.lichChieu">
-          <h2>ten rap {{ item.thongTinRap.maCumRap | uppercase }}</h2>
-          <p>ngay gio: {{ item.ngayChieuGioChieu | date }}</p>
+      <mat-tab label="Thông tin lịch chiếu">
+        <div *ngFor="let item of ThongtinPhim.lichChieu" class="mb-4">
+          <h2>Tên Rap: {{ item.thongTinRap.maCumRap | uppercase }}</h2>
+          <p>Ngày Giờ: {{ item.ngayChieuGioChieu | date }}</p>
 
           <button
             mat-raised-button
             color="primary"
             routerLink="/datve/{{ item.maLichChieu }}"
           >
-            dat ve
+            Đặt vé
           </button>
         </div>
         <!-- <app-showtime></app-showtime> -->

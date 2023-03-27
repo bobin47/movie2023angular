@@ -12,10 +12,10 @@
   <ng-container *ngIf="isLogin; then icon; else login"> </ng-container>
   <ng-template #login>
     <button mat-raised-button routerLink="/register" class="mr-3">
-      Dang ky
+      Đăng Ký
     </button>
     <button mat-raised-button color="accent" routerLink="/login">
-      Dang nhap
+      Đăng Nhâp
     </button>
   </ng-template>
 
@@ -47,7 +47,7 @@
       </button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item>Item 1</button>
-        <button mat-menu-item (click)="dangXuat()">Dang xuat</button>
+        <button mat-menu-item (click)="dangXuat()">Đăng xuất</button>
       </mat-menu>
     </div>
   </ng-template>

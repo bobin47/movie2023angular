@@ -1,5 +1,5 @@
 <div class="px-4 py-2 h-[50%]">
-  <h1 class="text-3xl text-center font-bold my-4">Them Nguoi dung</h1>
+  <h1 class="text-3xl text-center font-bold my-4">Thêm Người dùng</h1>
   <form
     action=""
     class="flex flex-col"
@@ -7,74 +7,74 @@
     (ngSubmit)="onSubmit()"
   >
     <mat-form-field class="example-form-field w-[500px]">
-      <mat-label>tai khoan</mat-label>
+      <mat-label>Tài Khoản</mat-label>
       <input matInput type="text" formControlName="taiKhoan" />
       <mat-error *ngIf="themUserForm.controls.taiKhoan.errors?.['required']"
-        >tai khoang la bat buon</mat-error
+        >Tài khoản là bắt buộc</mat-error
       >
       <mat-error *ngIf="themUserForm.controls.taiKhoan.errors?.['minlength']"
-        >tren 6 ky tu</mat-error
+        >Ít nhất trên 6 ký tự</mat-error
       >
     </mat-form-field>
 
     <mat-form-field class="example-form-field w-[500px]">
-      <mat-label>mat khau</mat-label>
+      <mat-label>Mật khẩu</mat-label>
       <input type="password" matInput formControlName="matKhau" />
       <mat-error *ngIf="themUserForm.controls.taiKhoan.errors?.['required']"
-        >tai khoang la bat buon</mat-error
+        >Mật Khẩu là bắt buộc</mat-error
       >
       <mat-error *ngIf="themUserForm.controls.taiKhoan.errors?.['minlength']"
-        >tren 6 ky tu</mat-error
+        >Ít nhất trên 6 ký tự</mat-error
       >
     </mat-form-field>
 
     <mat-form-field class="example-form-field w-[500px]">
-      <mat-label>email</mat-label>
+      <mat-label>Email</mat-label>
       <input matInput type="text" formControlName="email" />
       <mat-error *ngIf="themUserForm.controls.email.errors?.['pattern']"
-        >khong dung dinh dang email</mat-error
+        >Email là bắt buộc</mat-error
       >
       <mat-error *ngIf="themUserForm.controls.email.errors?.['required']"
-        >khong dung dinh dang email</mat-error
+        >Không đúng định dạng email</mat-error
       >
     </mat-form-field>
 
     <mat-form-field class="example-form-field w-[500px]">
-      <mat-label>soDt</mat-label>
+      <mat-label>Số điện thoại</mat-label>
       <input type="text" matInput formControlName="soDt" />
       <mat-error *ngIf="themUserForm.controls.soDt.errors?.['required']"
-        >sdt la bac buoc</mat-error
+        >Số điện thoại là bắt buộc</mat-error
       >
     </mat-form-field>
 
     <mat-form-field class="example-form-field w-[500px]">
-      <mat-label>maNhom</mat-label>
+      <mat-label>Mã nhóm</mat-label>
       <mat-select formControlName="maNhom">
         <mat-option value="GP01">GP01</mat-option>
         <mat-option value="GP01">GP02</mat-option>
       </mat-select>
       <mat-error *ngIf="themUserForm.controls.maNhom.errors?.['required']"
-        >maNhom la bat buoc</mat-error
+        >Mã nhóm là bắt buộc</mat-error
       >
     </mat-form-field>
 
     <mat-form-field class="example-form-field w-[500px]">
-      <mat-label>maLoaiNguoiDung</mat-label>
+      <mat-label>Mẫ loại người dùng</mat-label>
       <mat-select formControlName="maLoaiNguoiDung">
-        <mat-option value="KhachHang">Khanh hang</mat-option>
-        <mat-option value="QuanTri">Quan tri</mat-option>
+        <mat-option value="KhachHang">Khách Hàng</mat-option>
+        <mat-option value="QuanTri">Quản trị</mat-option>
       </mat-select>
       <mat-error
         *ngIf="themUserForm.controls.maLoaiNguoiDung.errors?.['required']"
-        >maLoaiNguoiDung la bat buoc</mat-error
+        >Mã loại người dùng là bắt buộc</mat-error
       >
     </mat-form-field>
 
     <mat-form-field class="example-form-field w-[500px]">
-      <mat-label>hoTen</mat-label>
+      <mat-label>Họ Tên</mat-label>
       <input matInput type="text" formControlName="hoTen" />
       <mat-error *ngIf="themUserForm.controls.hoTen.errors?.['required']"
-        >ho Ten la bat buoc</mat-error
+        >Họ Tên là bắt buộc</mat-error
       >
     </mat-form-field>
 
@@ -85,7 +85,7 @@
         class="flex items-center justify-center"
         [disabled]="!themUserForm.valid"
       >
-        Them
+        Thêm
       </button>
       <!-- <mat-spinner
           *ngIf="isLoading"
